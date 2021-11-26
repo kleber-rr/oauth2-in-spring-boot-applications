@@ -6,4 +6,7 @@ spring:
       resourceserver:
         jwt:
           jwk-set-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/certs
-#          issuer-uri: http://localhost:8080/auth/realms/meudominio
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka
