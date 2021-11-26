@@ -1,0 +1,11 @@
+server:
+  port: 8090
+ 
+#OAuth2 Related
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/certs
+#          issuer-uri: http://localhost:8080/auth/realms/meudominio

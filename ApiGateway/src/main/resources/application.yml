@@ -1,0 +1,24 @@
+server:
+  port: 8082
+
+spring:
+  cloud:
+    gateway:
+      routes[0]:
+        id: users-status-check
+        uri: http://localhost:8081
+        predicates[0]: Path=/users/status/check
+        predicates[1]: Method=GET
+        filters[0]: RemoveRequestHeader=Cookie
+      routes[1]:
+        id: albums
+        uri: http://localhost:8091
+        predicates[0]: Path=/albums
+        predicates[1]: Method=GET
+        filters[0]: RemoveRequestHeader=Cookie
+      routes[2]:
+        id: photos
+        uri: http://localhost:8090
+        predicates[0]: Path=/photos
+        predicates[1]: Method=GET
+        filters[0]: RemoveRequestHeader=Cookie
