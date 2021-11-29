@@ -6,19 +6,23 @@ spring:
     gateway:
       routes[0]:
         id: users-status-check
-        uri: http://localhost:8081
+        uri: lb://demo-resource-server
         predicates[0]: Path=/users/status/check
         predicates[1]: Method=GET
         filters[0]: RemoveRequestHeader=Cookie
       routes[1]:
         id: albums
-        uri: http://localhost:8091
+        uri: lb://album-resource-server
         predicates[0]: Path=/albums
         predicates[1]: Method=GET
         filters[0]: RemoveRequestHeader=Cookie
       routes[2]:
         id: photos
-        uri: http://localhost:8090
+        uri: lb://photos-resource-server
         predicates[0]: Path=/photos
         predicates[1]: Method=GET
         filters[0]: RemoveRequestHeader=Cookie
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8010/eureka
