@@ -1,0 +1,36 @@
+#spring.security.oauth2.client.registration.google.client-id =  
+#spring.security.oauth2.client.registration.google.client-secret =  
+
+
+#spring.security.oauth2.client.registration.facebook.client-id =  
+#spring.security.oauth2.client.registration.facebook.client-secret =  
+
+
+#spring.security.oauth2.client.registration.github.client-id =  
+#spring.security.oauth2.client.registration.github.client-secret = 
+
+
+#spring.security.oauth2.client.registration.okta.client-id =
+#spring.security.oauth2.client.registration.okta.client-secret =
+#spring.security.oauth2.client.registration.okta.scope=openid,profile
+#spring.security.oauth2.client.provider.okta.issuer-uri=
+
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+#          facebook:
+#            client-id: 198347135786691
+#            client-secret: 9f132c74624723c8172bc4766e380b48
+#          google:
+#            client-id: 608486196936-n3gbr3ve292crv6prp3qebs4m7b58asq.apps.googleusercontent.com
+#            client-secret: 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
+          okta:
+            client-id: 0oa2wg3rqkAlC5DGe5d7
+            client-secret: PLVRKeJNWsVmz-2FMck0-acOu9voZcOjaMbHId83
+            scope: openid,profile
+        provider:
+          okta:
+            issuer-uri: https://dev-50825072.okta.com/oauth2/default

@@ -1,0 +1,21 @@
+server:
+  port: 8087
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          mywebclient:
+            client-id: photo-app-webclient
+            client-secret: 32a5946a-fc1d-4958-804d-a41a1aecd1e5
+            scope: openid, profile, roles
+            authorization-grant-type: authorization_code
+            redirect-uri: http://localhost:8087/login/oauth2/code/mywebclient
+        provider:
+          mywebclient:
+            authorization-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/auth
+            token-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/token
+            jwk-set-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/certs
+            user-info-uri: http://localhost:8080/auth/realms/meudominio/protocol/openid-connect/userinfo
+            user-name-attribute: preferred_username
