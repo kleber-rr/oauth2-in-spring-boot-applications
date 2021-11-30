@@ -22,6 +22,13 @@ spring:
         predicates[0]: Path=/photos
         predicates[1]: Method=GET
         filters[0]: RemoveRequestHeader=Cookie
+      globalcors:
+        add-to-simple-url-handler-mapping: true
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
 eureka:
   client:
     serviceUrl:
